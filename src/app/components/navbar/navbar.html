@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container navbar__content">
+    <a class="navbar__logo" href="#about">
+      &lt;<span>dev</span>/&gt;
+    </a>
+
+    <ul class="navbar__links" [class.open]="menuOpen">
+      <li><a href="#about" (click)="closeMenu()">Sobre</a></li>
+      <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+      <li><a href="#experience" (click)="closeMenu()">Experiência</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contato</a></li>
+    </ul>
+
+    <button class="navbar__hamburger" (click)="toggleMenu()">
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+    </button>
+  </div>
+</nav>
