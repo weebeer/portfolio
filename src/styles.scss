@@ -1,1 +1,143 @@
-/* You can add global styles to this file, and also import other style files */
+
+// VARIÁVEIS
+:root {
+  // Backgrounds
+  --bg-primary: #0a0a0f;     
+  --bg-secondary: #12121a;    
+  --bg-card: #1a1a2e;         
+
+  // Cores de destaque 
+  --accent-purple: #7c3aed;   
+  --accent-purple-light: #a855f7; 
+  --accent-blue: #3b82f6;     
+  --accent-glow: rgba(124, 58, 237, 0.3); 
+
+  // Textos
+  --text-primary: #f1f5f9;    
+  --text-secondary: #94a3b8;  
+  --text-muted: #475569;      
+
+  // Bordas
+  --border-color: rgba(124, 58, 237, 0.2); 
+  --font-main: 'Inter', sans-serif;
+  --font-code: 'Fira Code', monospace;
+  --section-padding: 100px 0;
+  --container-max: 1100px;
+}
+
+// RESET
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // faz padding não aumentar o tamanho do elemento
+}
+
+// BASE
+html {
+  scroll-behavior: smooth; // rolagem suave ao clicar em âncoras
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden; // evita scroll horizontal indesejado
+}
+
+// UTILITÁRIOS
+.container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+
+  span {
+    color: var(--accent-purple-light); 
+  }
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+  border-radius: 2px;
+  margin-bottom: 3rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px); // sobe levemente no hover
+    box-shadow: 0 8px 25px var(--accent-glow);
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  color: var(--accent-purple-light);
+  border: 1px solid var(--accent-purple);
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--accent-glow);
+    transform: translateY(-2px);
+  }
+}
+
+// Tags
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-card);
+  color: var(--accent-purple-light);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+}
+
+// SCROLLBAR 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-purple);
+  border-radius: 3px;
+}
